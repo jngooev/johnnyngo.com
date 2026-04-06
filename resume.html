@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nhat Phu Ngo — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #6b6b67;
+      --ink-faint: #b0b0aa;
+      --paper: #f7f6f2;
+      --paper-warm: #efeee9;
+      --accent: #c8a96e;
+      --line: #e2e1db;
+    }
+
+    html { background: #d0cfc8; }
+
+    .download-bar {
+      max-width: 780px;
+      margin: 1.5rem auto 0;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 0.5rem;
+    }
+    .download-btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.5rem 1.1rem;
+      background: #1a1a18;
+      color: #f7f6f2;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 500;
+      border-radius: 3px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .download-btn:hover { background: #2e2e2a; }
+    @media print { .download-bar { display: none; } }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10pt;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      max-width: 780px;
+      margin: 2rem auto;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    }
+
+    /* ── HEADER ── */
+    .header { margin-bottom: 1.6rem; }
+    .header h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      line-height: 1.1;
+      margin-bottom: 0.4rem;
+    }
+    .header-sub {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      font-weight: 400;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0 1.25rem;
+    }
+    .header-sub a {
+      color: var(--ink-light);
+      text-decoration: none;
+    }
+    .header-sub a:hover { color: var(--accent); }
+
+    /* ── DIVIDER ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin: 1.1rem 0;
+    }
+    .accent-rule {
+      width: 2rem;
+      height: 2px;
+      background: var(--accent);
+      margin-bottom: 0.9rem;
+    }
+
+    /* ── SECTIONS ── */
+    .section { margin-bottom: 1.5rem; }
+    .section-title {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    /* ── SUMMARY ── */
+    .summary {
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.7;
+      font-size: 0.9rem;
+      max-width: 660px;
+    }
+    .summary strong { color: var(--ink); font-weight: 500; }
+
+    /* ── EXPERIENCE ── */
+    .entry { margin-bottom: 1.1rem; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.1rem;
+    }
+    .entry-title {
+      font-weight: 500;
+      font-size: 0.9rem;
+      color: var(--ink);
+    }
+    .entry-date {
+      font-size: 0.78rem;
+      color: var(--ink-faint);
+      white-space: nowrap;
+      margin-left: 1rem;
+    }
+    .entry-org {
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      margin-bottom: 0.45rem;
+    }
+    .entry-bullets {
+      list-style: none;
+      padding: 0;
+    }
+    .entry-bullets li {
+      font-size: 0.855rem;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.65;
+      padding-left: 1rem;
+      position: relative;
+      margin-bottom: 0.25rem;
+    }
+    .entry-bullets li::before {
+      content: '–';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+    }
+
+    /* ── PROJECTS ── */
+    .project-entry { margin-bottom: 1.1rem; }
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      gap: 0.6rem;
+      margin-bottom: 0.2rem;
+    }
+    .project-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1rem;
+      color: var(--ink);
+    }
+    .project-badge {
+      font-size: 0.68rem;
+      font-weight: 500;
+      color: #8a6d3b;
+      background: #f0e9d8;
+      border-radius: 2rem;
+      padding: 0.1rem 0.55rem;
+      letter-spacing: 0.03em;
+    }
+    .project-url {
+      font-size: 0.75rem;
+      color: var(--ink-faint);
+      text-decoration: none;
+      margin-left: auto;
+    }
+    .project-url:hover { color: var(--accent); }
+    .project-stack {
+      font-size: 0.78rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+    }
+    .project-desc {
+      font-size: 0.855rem;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* ── TWO-COL ── */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 3rem;
+    }
+
+    /* ── SKILLS ── */
+    .skill-group { margin-bottom: 0.6rem; }
+    .skill-label {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.15rem;
+    }
+    .skill-items {
+      font-size: 0.835rem;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ── CERTS ── */
+    .cert-item {
+      font-size: 0.855rem;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.65;
+    }
+
+    /* ── PRINT ── */
+    @media print {
+      html { background: white; }
+      body {
+        margin: 0;
+        padding: 1cm 1.4cm;
+        box-shadow: none;
+        max-width: 100%;
+        font-size: 9pt;
+        line-height: 1.45;
+      }
+      .header { margin-bottom: 1rem; }
+      .header h1 { font-size: 1.6rem; }
+      hr { margin: 0.6rem 0; }
+      .section { margin-bottom: 1rem; }
+      .section-title { margin-bottom: 0.5rem; }
+      .entry { margin-bottom: 0.75rem; }
+      .entry-org { margin-bottom: 0.3rem; }
+      .entry-bullets li { margin-bottom: 0.15rem; line-height: 1.5; }
+      .summary { line-height: 1.55; }
+      .project-entry { margin-bottom: 0.75rem; }
+      .project-desc { line-height: 1.5; }
+      .skill-group { margin-bottom: 0.4rem; }
+      .cert-item { line-height: 1.5; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="download-bar">
+    <a href="/resume.pdf" download class="download-btn">↓ Download PDF</a>
+  </div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <h1>Nhat Phu Ngo</h1>
+    <div class="header-sub">
+      <span>Garden Grove, CA</span>
+      <a href="mailto:johnnyngo.work@gmail.com">johnnyngo.work@gmail.com</a>
+      <span>(651) 271-5514</span>
+      <a href="https://linkedin.com/in/nhatphu-ngo" target="_blank">linkedin.com/in/nhatphu-ngo</a>
+      <a href="https://github.com/jngooev" target="_blank">github.com/jngooev</a>
+      <a href="https://johnnyngo.com" target="_blank">johnnyngo.com</a>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- SUMMARY -->
+  <div class="section">
+    <p class="section-title">Summary</p>
+    <p class="summary">
+      <strong>Data analyst and solo developer</strong> with 3+ years turning business data into decisions at a multi-location restaurant chain.
+      Built and shipped <strong>Tablo</strong> — a full-stack NFC tap-to-order system for restaurants — as a solo developer using Next.js, Supabase, and Stripe.
+      Combine analytical rigor with hands-on engineering to go from idea to deployed product.
+    </p>
+  </div>
+
+  <hr />
+
+  <!-- EXPERIENCE -->
+  <div class="section">
+    <p class="section-title">Work Experience</p>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Data Analyst</span>
+        <span class="entry-date">Mar 2023 – Present</span>
+      </div>
+      <div class="entry-org">Lee's Sandwiches &nbsp;·&nbsp; Garden Grove, CA</div>
+      <ul class="entry-bullets">
+        <li>Collaborate cross-functionally with Accounting and Marketing to deliver strategic insights on promotions, pricing, and timing.</li>
+        <li>Built an interactive staffing scheduler that aligns headcount to real-time sales data, reducing average labor costs by <strong>5%</strong>.</li>
+        <li>Led a COGS analysis for the General Manager — identified root causes of margin pressure and drove a <strong>4% reduction</strong> in COGS since project inception.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Operator – Inspector</span>
+        <span class="entry-date">Sep 2021 – Mar 2023</span>
+      </div>
+      <div class="entry-org">Hilltop Technology Laboratory &nbsp;·&nbsp; Irvine, CA</div>
+      <ul class="entry-bullets">
+        <li>Operated 3-axis and 5-axis CNC machines; inspected parts against drawings and specifications for final-quality sign-off.</li>
+      </ul>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Sales Representative</span>
+        <span class="entry-date">Jul 2019 – Apr 2021</span>
+      </div>
+      <div class="entry-org">LiV Vacation Club &nbsp;·&nbsp; HCM City, Vietnam</div>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- PROJECTS -->
+  <div class="section">
+    <p class="section-title">Projects</p>
+
+    <div class="project-entry">
+      <div class="project-header">
+        <span class="project-name">Tablo</span>
+        <span class="project-badge">Live Product</span>
+        <a href="https://tablo.johnnyanalytics.com" class="project-url" target="_blank">tablo.johnnyanalytics.com</a>
+      </div>
+      <div class="project-stack">Next.js · Tailwind CSS · Supabase · PostgreSQL · Stripe · ZeptoMail · Web Push API · Vercel</div>
+      <p class="project-desc">
+        NFC tap-to-order system for restaurants — customers tap a sticker on the table, browse the menu, and pay from their phone with no app required.
+        Built solo end-to-end: real-time kitchen queue (Supabase Realtime), Stripe authorize-then-capture payments, waiter push notifications (VAPID),
+        transactional email, manager dashboard, and a loyalty program.
+      </p>
+    </div>
+  </div>
+
+  <hr />
+
+  <!-- SKILLS + CERTS (two-col) -->
+  <div class="two-col">
+    <div class="section">
+      <p class="section-title">Skills</p>
+      <div class="skill-group">
+        <div class="skill-label">Development</div>
+        <div class="skill-items">Next.js, React, TypeScript, Tailwind CSS, Supabase, PostgreSQL, Stripe, Vercel, Edge Functions, Web Push API</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-label">Data &amp; Analytics</div>
+        <div class="skill-items">SQL, Python, R, Tableau, Power BI, Power Query, Excel / Pivot Tables</div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="section-title">Education</p>
+      <div class="entry" style="margin-bottom:1rem;">
+        <div class="entry-header">
+          <span class="entry-title">B.A. Quality Management</span>
+          <span class="entry-date">2021</span>
+        </div>
+        <div class="entry-org">University of Economics, HCM City &nbsp;·&nbsp; Magna Cum Laude</div>
+      </div>
+
+      <p class="section-title" style="margin-top:0.8rem;">Certifications</p>
+      <div class="cert-item">Google Data Analytics Professional Certificate</div>
+      <div class="cert-item">Data Visualization with Tableau Specialization</div>
+      <div class="cert-item">Learn SQL Basics for Data Science Specialization</div>
+    </div>
+  </div>
+
+</body>
+</html>
