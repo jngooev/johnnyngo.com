@@ -15,15 +15,27 @@
       --ink-light: #6b6b67;
       --ink-faint: #b0b0aa;
       --paper: #f7f6f2;
-      --paper-warm: #efeee9;
       --accent: #c8a96e;
       --line: #e2e1db;
     }
 
     html { background: #d0cfc8; }
 
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 10.5pt;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 3rem 3.5rem;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+    }
+
     .download-bar {
-      max-width: 780px;
+      max-width: 800px;
       margin: 1.5rem auto 0;
       display: flex;
       justify-content: flex-end;
@@ -32,229 +44,107 @@
     .download-btn {
       display: inline-flex; align-items: center; gap: 0.4rem;
       padding: 0.5rem 1.1rem;
-      background: #1a1a18;
-      color: #f7f6f2;
+      background: #1a1a18; color: #f7f6f2;
       font-family: 'DM Sans', sans-serif;
-      font-size: 0.8rem;
-      font-weight: 500;
-      border-radius: 3px;
-      text-decoration: none;
+      font-size: 0.8rem; font-weight: 500;
+      border-radius: 3px; text-decoration: none;
       transition: background 0.2s;
     }
     .download-btn:hover { background: #2e2e2a; }
-    @media print { .download-bar { display: none; } }
 
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'DM Sans', sans-serif;
-      font-size: 10pt;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      max-width: 780px;
-      margin: 2rem auto;
-      padding: 3rem 3.5rem;
-      box-shadow: 0 4px 32px rgba(0,0,0,0.10);
-    }
-
-    /* ── HEADER ── */
-    .header { margin-bottom: 1.6rem; }
+    /* HEADER */
+    .header { margin-bottom: 1.25rem; }
     .header h1 {
       font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      letter-spacing: -0.02em;
-      color: var(--ink);
-      line-height: 1.1;
-      margin-bottom: 0.4rem;
+      font-size: 2.1rem; letter-spacing: -0.02em;
+      color: var(--ink); line-height: 1.1; margin-bottom: 0.3rem;
     }
     .header-sub {
-      font-size: 0.8rem;
-      color: var(--ink-light);
-      font-weight: 400;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0 1.25rem;
+      font-size: 0.82rem; color: var(--ink-light);
+      display: flex; flex-wrap: wrap; gap: 0 1.2rem;
     }
-    .header-sub a {
-      color: var(--ink-light);
-      text-decoration: none;
-    }
-    .header-sub a:hover { color: var(--accent); }
+    .header-sub a { color: var(--ink-light); text-decoration: none; }
 
-    /* ── DIVIDER ── */
-    hr {
-      border: none;
-      border-top: 1px solid var(--line);
-      margin: 1.1rem 0;
-    }
-    .accent-rule {
-      width: 2rem;
-      height: 2px;
-      background: var(--accent);
-      margin-bottom: 0.9rem;
-    }
+    hr { border: none; border-top: 1px solid var(--line); margin: 0.95rem 0; }
 
-    /* ── SECTIONS ── */
-    .section { margin-bottom: 1.5rem; }
+    .section { margin-bottom: 1.25rem; }
     .section-title {
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-bottom: 0.75rem;
+      font-size: 0.65rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 0.7rem;
     }
 
-    /* ── SUMMARY ── */
-    .summary {
-      color: var(--ink-light);
-      font-weight: 300;
-      line-height: 1.7;
-      font-size: 0.9rem;
-      max-width: 660px;
-    }
+    /* SUMMARY */
+    .summary { color: var(--ink-light); font-weight: 300; line-height: 1.75; font-size: 0.925rem; }
     .summary strong { color: var(--ink); font-weight: 500; }
 
-    /* ── EXPERIENCE ── */
+    /* EXPERIENCE */
     .entry { margin-bottom: 1.1rem; }
-    .entry-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 0.1rem;
-    }
-    .entry-title {
-      font-weight: 500;
-      font-size: 0.9rem;
-      color: var(--ink);
-    }
-    .entry-date {
-      font-size: 0.78rem;
-      color: var(--ink-faint);
-      white-space: nowrap;
-      margin-left: 1rem;
-    }
-    .entry-org {
-      font-size: 0.8rem;
-      color: var(--ink-light);
-      margin-bottom: 0.45rem;
-    }
-    .entry-bullets {
-      list-style: none;
-      padding: 0;
-    }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.1rem; }
+    .entry-title { font-weight: 500; font-size: 0.93rem; color: var(--ink); }
+    .entry-date { font-size: 0.8rem; color: var(--ink-faint); white-space: nowrap; margin-left: 1rem; }
+    .entry-org { font-size: 0.825rem; color: var(--ink-light); margin-bottom: 0.4rem; }
+
+    .entry-bullets { list-style: none; padding: 0; }
     .entry-bullets li {
-      font-size: 0.855rem;
-      color: var(--ink-light);
-      font-weight: 300;
-      line-height: 1.65;
-      padding-left: 1rem;
-      position: relative;
-      margin-bottom: 0.25rem;
+      font-size: 0.875rem; color: var(--ink-light); font-weight: 300;
+      line-height: 1.65; margin-bottom: 0.28rem;
+      padding-left: 1.1em; text-indent: -1.1em;
     }
-    .entry-bullets li::before {
-      content: '–';
-      position: absolute;
-      left: 0;
-      color: var(--accent);
-    }
+    .entry-bullets li::before { content: '– '; color: var(--accent); }
 
-    /* ── PROJECTS ── */
-    .project-entry { margin-bottom: 1.1rem; }
-    .project-header {
-      display: flex;
-      align-items: baseline;
-      gap: 0.6rem;
-      margin-bottom: 0.2rem;
-    }
-    .project-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1rem;
-      color: var(--ink);
-    }
+    /* PROJECTS */
+    .project-entry { margin-bottom: 0.9rem; }
+    .project-header { display: flex; align-items: baseline; gap: 0.6rem; margin-bottom: 0.2rem; }
+    .project-name { font-family: 'DM Serif Display', serif; font-size: 1.05rem; color: var(--ink); }
     .project-badge {
-      font-size: 0.68rem;
-      font-weight: 500;
-      color: #8a6d3b;
-      background: #f0e9d8;
-      border-radius: 2rem;
-      padding: 0.1rem 0.55rem;
-      letter-spacing: 0.03em;
+      font-size: 0.68rem; font-weight: 500; color: #8a6d3b;
+      background: #f0e9d8; border-radius: 2rem; padding: 0.1rem 0.55rem;
     }
-    .project-url {
-      font-size: 0.75rem;
-      color: var(--ink-faint);
-      text-decoration: none;
-      margin-left: auto;
-    }
-    .project-url:hover { color: var(--accent); }
-    .project-stack {
-      font-size: 0.78rem;
-      color: var(--accent);
-      font-weight: 500;
-      margin-bottom: 0.3rem;
-    }
-    .project-desc {
-      font-size: 0.855rem;
-      color: var(--ink-light);
-      font-weight: 300;
-      line-height: 1.65;
-    }
+    .project-url { font-size: 0.775rem; color: var(--ink-faint); text-decoration: none; margin-left: auto; }
+    .project-stack { font-size: 0.8rem; color: var(--accent); font-weight: 500; margin-bottom: 0.3rem; }
+    .project-desc { font-size: 0.875rem; color: var(--ink-light); font-weight: 300; line-height: 1.65; }
 
-    /* ── TWO-COL ── */
-    .two-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 3rem;
-    }
+    /* TWO-COL */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 0 3rem; }
 
-    /* ── SKILLS ── */
-    .skill-group { margin-bottom: 0.6rem; }
-    .skill-label {
-      font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.15rem;
-    }
-    .skill-items {
-      font-size: 0.835rem;
-      color: var(--ink-light);
-      font-weight: 300;
-      line-height: 1.6;
-    }
+    .skill-group { margin-bottom: 0.65rem; }
+    .skill-label { font-size: 0.8rem; font-weight: 500; color: var(--ink); margin-bottom: 0.15rem; }
+    .skill-items { font-size: 0.865rem; color: var(--ink-light); font-weight: 300; line-height: 1.6; }
 
-    /* ── CERTS ── */
-    .cert-item {
-      font-size: 0.855rem;
-      color: var(--ink-light);
-      font-weight: 300;
-      line-height: 1.65;
-    }
+    .cert-item { font-size: 0.875rem; color: var(--ink-light); font-weight: 300; line-height: 1.65; }
 
-    /* ── PRINT ── */
+    /* PRINT */
     @media print {
       html { background: white; }
+      .download-bar { display: none; }
       body {
         margin: 0;
-        padding: 1cm 1.4cm;
+        padding: 0.75cm 1.4cm;
         box-shadow: none;
         max-width: 100%;
         font-size: 9pt;
         line-height: 1.45;
       }
-      .header { margin-bottom: 1rem; }
-      .header h1 { font-size: 1.6rem; }
-      hr { margin: 0.6rem 0; }
-      .section { margin-bottom: 1rem; }
-      .section-title { margin-bottom: 0.5rem; }
-      .entry { margin-bottom: 0.75rem; }
-      .entry-org { margin-bottom: 0.3rem; }
-      .entry-bullets li { margin-bottom: 0.15rem; line-height: 1.5; }
-      .summary { line-height: 1.55; }
-      .project-entry { margin-bottom: 0.75rem; }
-      .project-desc { line-height: 1.5; }
+      .header { margin-bottom: 0.6rem; }
+      .header h1 { font-size: 1.55rem; margin-bottom: 0.2rem; }
+      .header-sub { font-size: 0.75rem; }
+      hr { margin: 0.5rem 0; }
+      .section { margin-bottom: 0.65rem; }
+      .section-title { margin-bottom: 0.4rem; font-size: 0.6rem; }
+      .summary { font-size: 0.875rem; line-height: 1.5; }
+      .entry { margin-bottom: 0.6rem; }
+      .entry-title { font-size: 0.875rem; }
+      .entry-org { margin-bottom: 0.25rem; font-size: 0.775rem; }
+      .entry-bullets li { font-size: 0.825rem; line-height: 1.45; margin-bottom: 0.15rem; }
+      .project-stack { font-size: 0.75rem; }
+      .project-desc { font-size: 0.825rem; line-height: 1.45; }
+      .skill-label { font-size: 0.775rem; }
+      .skill-items { font-size: 0.815rem; line-height: 1.5; }
       .skill-group { margin-bottom: 0.4rem; }
-      .cert-item { line-height: 1.5; }
+      .cert-item { font-size: 0.825rem; line-height: 1.45; }
+      .two-col { gap: 0 2rem; }
     }
   </style>
 </head>
@@ -264,7 +154,6 @@
     <a href="/resume.pdf" download class="download-btn">↓ Download PDF</a>
   </div>
 
-  <!-- HEADER -->
   <div class="header">
     <h1>Nhat Phu Ngo</h1>
     <div class="header-sub">
@@ -279,19 +168,18 @@
 
   <hr />
 
-  <!-- SUMMARY -->
   <div class="section">
     <p class="section-title">Summary</p>
     <p class="summary">
-      <strong>Data analyst and solo developer</strong> with 3+ years turning business data into decisions at a multi-location restaurant chain.
-      Built and shipped <strong>Tablo</strong> — a full-stack NFC tap-to-order system for restaurants — as a solo developer using Next.js, Supabase, and Stripe.
-      Combine analytical rigor with hands-on engineering to go from idea to deployed product.
+      <strong>Data analyst and solo developer</strong> with 3+ years turning business data into actionable
+      decisions at a multi-location restaurant chain. Built and shipped <strong>Tablo</strong> — a full-stack
+      NFC tap-to-order system for restaurants — as a solo developer using Next.js, Supabase, and Stripe.
+      Combine analytical rigor with hands-on engineering to take ideas from concept to deployed product.
     </p>
   </div>
 
   <hr />
 
-  <!-- EXPERIENCE -->
   <div class="section">
     <p class="section-title">Work Experience</p>
 
@@ -300,11 +188,11 @@
         <span class="entry-title">Data Analyst</span>
         <span class="entry-date">Mar 2023 – Present</span>
       </div>
-      <div class="entry-org">Lee's Sandwiches &nbsp;·&nbsp; Garden Grove, CA</div>
+      <div class="entry-org">Lee's Sandwiches · Garden Grove, CA</div>
       <ul class="entry-bullets">
         <li>Collaborate cross-functionally with Accounting and Marketing to deliver strategic insights on promotions, pricing, and timing.</li>
-        <li>Built an interactive staffing scheduler that aligns headcount to real-time sales data, reducing average labor costs by <strong>5%</strong>.</li>
-        <li>Led a COGS analysis for the General Manager — identified root causes of margin pressure and drove a <strong>4% reduction</strong> in COGS since project inception.</li>
+        <li>Built an interactive staffing scheduler aligning headcount to real-time sales data — reduced average labor costs by 5%.</li>
+        <li>Led a COGS analysis for the General Manager, identified root causes of margin pressure and drove a 4% reduction in COGS.</li>
       </ul>
     </div>
 
@@ -313,7 +201,7 @@
         <span class="entry-title">Operator – Inspector</span>
         <span class="entry-date">Sep 2021 – Mar 2023</span>
       </div>
-      <div class="entry-org">Hilltop Technology Laboratory &nbsp;·&nbsp; Irvine, CA</div>
+      <div class="entry-org">Hilltop Technology Laboratory · Irvine, CA</div>
       <ul class="entry-bullets">
         <li>Operated 3-axis and 5-axis CNC machines; inspected parts against drawings and specifications for final-quality sign-off.</li>
       </ul>
@@ -324,16 +212,14 @@
         <span class="entry-title">Sales Representative</span>
         <span class="entry-date">Jul 2019 – Apr 2021</span>
       </div>
-      <div class="entry-org">LiV Vacation Club &nbsp;·&nbsp; HCM City, Vietnam</div>
+      <div class="entry-org">LiV Vacation Club · HCM City, Vietnam</div>
     </div>
   </div>
 
   <hr />
 
-  <!-- PROJECTS -->
   <div class="section">
     <p class="section-title">Projects</p>
-
     <div class="project-entry">
       <div class="project-header">
         <span class="project-name">Tablo</span>
@@ -342,16 +228,15 @@
       </div>
       <div class="project-stack">Next.js · Tailwind CSS · Supabase · PostgreSQL · Stripe · ZeptoMail · Web Push API · Vercel</div>
       <p class="project-desc">
-        NFC tap-to-order system for restaurants — customers tap a sticker on the table, browse the menu, and pay from their phone with no app required.
-        Built solo end-to-end: real-time kitchen queue (Supabase Realtime), Stripe authorize-then-capture payments, waiter push notifications (VAPID),
-        transactional email, manager dashboard, and a loyalty program.
+        NFC tap-to-order system for restaurants — customers tap a sticker on the table, browse the menu, and pay
+        from their phone with no app required. Built solo: real-time kitchen queue, Stripe authorize-then-capture,
+        waiter push notifications (VAPID), transactional email, manager dashboard, and loyalty program.
       </p>
     </div>
   </div>
 
   <hr />
 
-  <!-- SKILLS + CERTS (two-col) -->
   <div class="two-col">
     <div class="section">
       <p class="section-title">Skills</p>
@@ -367,14 +252,13 @@
 
     <div class="section">
       <p class="section-title">Education</p>
-      <div class="entry" style="margin-bottom:1rem;">
+      <div class="entry" style="margin-bottom:0.9rem;">
         <div class="entry-header">
           <span class="entry-title">B.A. Quality Management</span>
           <span class="entry-date">2021</span>
         </div>
-        <div class="entry-org">University of Economics, HCM City &nbsp;·&nbsp; Magna Cum Laude</div>
+        <div class="entry-org">University of Economics, HCM City · Magna Cum Laude</div>
       </div>
-
       <p class="section-title" style="margin-top:0.8rem;">Certifications</p>
       <div class="cert-item">Google Data Analytics Professional Certificate</div>
       <div class="cert-item">Data Visualization with Tableau Specialization</div>
