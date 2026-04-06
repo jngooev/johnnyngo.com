@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Johnny Ngo — Data Analyst & AI-Assisted Developer</title>
+  <meta name="description" content="Johnny Ngo is a data analyst and solo software developer. Creator of Tablo — an NFC tap-to-order system for restaurants built with Next.js, Supabase, and Stripe." />
+  <meta name="keywords" content="Johnny Ngo, data analyst, software developer, Next.js, Supabase, Tablo, NFC ordering, restaurant tech, Vercel, full stack" />
+  <meta name="author" content="Johnny Ngo" />
+  <link rel="canonical" href="https://johnnyngo.com/" />
+
+  <!-- Open Graph (Facebook, LinkedIn previews) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://johnnyngo.com/" />
+  <meta property="og:title" content="Johnny Ngo — Data Analyst & AI-Assisted Developer" />
+  <meta property="og:description" content="Data analyst and solo builder. Creator of Tablo — NFC tap-to-order for restaurants. Built with Next.js, Supabase & Stripe." />
+  <meta property="og:image" content="https://johnnyngo.com/og-image.png" />
+  <meta property="og:site_name" content="Johnny Ngo" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://johnnyngo.com/" />
+  <meta name="twitter:title" content="Johnny Ngo — Data Analyst & AI-Assisted Developer" />
+  <meta name="twitter:description" content="Data analyst and solo builder. Creator of Tablo — NFC tap-to-order for restaurants. Built with Next.js, Supabase & Stripe." />
+  <meta name="twitter:image" content="https://johnnyngo.com/og-image.png" />
+
+  <!-- Structured Data (JSON-LD) — tells Google who you are -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Johnny Ngo",
+    "url": "https://johnnyngo.com",
+    "sameAs": [
+      "https://linkedin.com/in/nhatphu-ngo",
+      "https://github.com/jngooev"
+    ],
+    "jobTitle": "Data Analyst & Software Developer",
+    "description": "Data analyst and solo AI-assisted developer. Creator of Tablo, an NFC tap-to-order system for restaurants.",
+    "knowsAbout": ["Data Analysis", "Next.js", "Supabase", "Stripe", "Restaurant Technology", "NFC Ordering"]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Tablo",
+    "url": "https://tablo.johnnyanalytics.com",
+    "author": { "@type": "Person", "name": "Johnny Ngo" },
+    "applicationCategory": "BusinessApplication",
+    "description": "NFC tap-to-order system for restaurants. Customers tap a sticker, browse the menu, and pay from their phone — no app download required.",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "availability": "https://schema.org/InStock" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #1a1a18;
+      --ink-light: #6b6b67;
+      --ink-faint: #b0b0aa;
+      --paper: #f7f6f2;
+      --paper-warm: #efeee9;
+      --accent: #c8a96e;
+      --accent-dim: #e8dfc8;
+      --line: #e2e1db;
+      --radius: 3px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 2.5rem;
+      background: rgba(247, 246, 242, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-logo {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink-light);
+      font-size: 0.875rem;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    section { padding: 6rem 0; }
+    section + section { border-top: 1px solid var(--line); }
+
+    /* ── HERO ── */
+    #hero {
+      padding-top: 10rem;
+      padding-bottom: 6rem;
+    }
+    .hero-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .hero-name {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--ink);
+      margin-bottom: 1.75rem;
+    }
+    .hero-name em {
+      font-style: italic;
+      color: var(--ink-light);
+    }
+    .hero-bio {
+      max-width: 520px;
+      font-size: 1.1rem;
+      font-weight: 300;
+      color: var(--ink-light);
+      line-height: 1.75;
+      margin-bottom: 2.5rem;
+    }
+    .hero-bio strong { color: var(--ink); font-weight: 500; }
+    .hero-cta {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.7rem 1.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      border-radius: var(--radius);
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary {
+      background: var(--ink);
+      color: var(--paper);
+    }
+    .btn-primary:hover { background: #2e2e2a; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--line);
+    }
+    .btn-outline:hover { border-color: var(--ink-faint); background: var(--paper-warm); }
+
+    /* ── ABOUT ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.25rem;
+    }
+    .section-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.2rem;
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1.25rem;
+    }
+    .body-text {
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.8;
+      font-size: 0.975rem;
+    }
+    .body-text + .body-text { margin-top: 1rem; }
+
+    .skills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 1.5rem;
+    }
+    .skill-tag {
+      padding: 0.35rem 0.85rem;
+      background: var(--paper-warm);
+      border: 1px solid var(--line);
+      border-radius: 2rem;
+      font-size: 0.8rem;
+      color: var(--ink-light);
+      font-weight: 400;
+    }
+
+    /* ── WORK ── */
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      padding: 3rem;
+      background: var(--paper-warm);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .project-card:hover {
+      border-color: var(--ink-faint);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.05);
+    }
+    .project-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.25rem 0.7rem;
+      background: var(--accent-dim);
+      border-radius: 2rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #8a6d3b;
+      margin-bottom: 1rem;
+    }
+    .project-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+    }
+    .project-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.9rem;
+      color: var(--ink);
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .project-desc {
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.75;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    .project-links {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .tech-visual {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .tech-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.65rem 1rem;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      font-size: 0.8rem;
+    }
+    .tech-row-label { color: var(--ink-faint); font-weight: 400; }
+    .tech-row-value { color: var(--ink); font-weight: 500; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+    .feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      font-size: 0.825rem;
+      color: var(--ink-light);
+      padding: 0.4rem 0;
+    }
+    .feature-item .icon { flex-shrink: 0; font-size: 0.95rem; }
+
+    /* ── CONTACT ── */
+    .contact-inner {
+      max-width: 560px;
+    }
+    .contact-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 2rem;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 2rem 0;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--ink-faint);
+    }
+
+    /* ── DIVIDER ── */
+    .rule {
+      width: 2.5rem;
+      height: 1px;
+      background: var(--accent);
+      margin: 1.5rem 0;
+    }
+
+    /* ── ANIMATIONS ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* ── ANALYTICS CARDS ── */
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-top: 0.75rem;
+    }
+    .analytics-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+      background: var(--paper-warm);
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .analytics-card:hover {
+      border-color: var(--ink-faint);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .analytics-card-top { margin-bottom: 1.25rem; }
+    .analytics-tag {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+    .analytics-title {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--ink);
+      margin-bottom: 0.5rem;
+      line-height: 1.25;
+    }
+    .analytics-desc {
+      font-size: 0.875rem;
+      color: var(--ink-light);
+      font-weight: 300;
+      line-height: 1.7;
+    }
+    .analytics-link {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 1px;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .analytics-link:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { gap: 1.25rem; }
+      .container { padding: 0 1.25rem; }
+      section { padding: 4rem 0; }
+      #hero { padding-top: 7rem; }
+      .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .project-card { grid-template-columns: 1fr; padding: 1.75rem; }
+      .analytics-grid { grid-template-columns: 1fr; }
+      .tech-visual { display: none; }
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#hero" class="nav-logo">Johnny Ngo</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#work">Work</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="/resume.pdf" target="_blank">Résumé</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="container">
+      <p class="hero-eyebrow fade-in">Data Analyst &amp; AI-Assisted Developer</p>
+      <h1 class="hero-name fade-in">Johnny<br/><em>Ngo.</em></h1>
+      <p class="hero-bio fade-in">
+        I turn data into decisions — and decisions into products.
+        <strong>Data analyst and solo builder</strong> — shipping full-stack apps
+        with Next.js, Supabase, and AI assistance.
+      </p>
+      <div class="hero-cta fade-in">
+        <a href="#work" class="btn btn-primary">See My Work</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        <a href="/resume.pdf" target="_blank" class="btn btn-outline">Résumé ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="fade-in">
+          <p class="section-label">Background</p>
+          <h2 class="section-title">Analyst <em style="font-style:italic;color:var(--ink-light);">and</em> builder.</h2>
+          <div class="rule"></div>
+          <p class="body-text">
+            My foundation is data — finding patterns, asking the right questions, and communicating clearly.
+            That analytical mindset now drives how I build software: every feature earns its place, every flow is deliberate.
+          </p>
+          <p class="body-text" style="margin-top:1rem;">
+            I build production-ready apps solo, using AI assistance to punch above my weight —
+            going from idea to deployed product without a team.
+          </p>
+        </div>
+        <div class="fade-in">
+          <p class="section-label">Skills</p>
+          <p class="body-text">Technologies &amp; tools I work with:</p>
+          <div class="skills-list">
+            <span class="skill-tag">Next.js</span>
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Stripe</span>
+            <span class="skill-tag">Vercel</span>
+            <span class="skill-tag">Edge Functions</span>
+            <span class="skill-tag">Web Push API</span>
+            <span class="skill-tag">Data Analysis</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">Python</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK -->
+  <section id="work">
+    <div class="container">
+      <p class="section-label fade-in">Projects</p>
+      <h2 class="section-title fade-in" style="margin-bottom:2.5rem;">What I've built.</h2>
+
+      <!-- Tablo -->
+      <div class="project-card fade-in">
+        <div>
+          <div class="project-badge"><span class="dot"></span> Live Product</div>
+          <h3 class="project-title">Tablo</h3>
+          <p class="project-desc">
+            NFC tap-to-order system for restaurants. Customers tap a sticker on the table,
+            browse the menu, and pay from their phone — no app download required.
+            Kitchen gets notified instantly.
+          </p>
+          <div class="feature-grid">
+            <div class="feature-item"><span class="icon">📱</span> NFC-triggered ordering</div>
+            <div class="feature-item"><span class="icon">💳</span> Stripe authorize-then-capture</div>
+            <div class="feature-item"><span class="icon">🍳</span> Real-time kitchen queue</div>
+            <div class="feature-item"><span class="icon">🔔</span> Waiter push notifications</div>
+            <div class="feature-item"><span class="icon">📊</span> Manager dashboard</div>
+            <div class="feature-item"><span class="icon">🎁</span> Loyalty program</div>
+          </div>
+          <div class="project-links" style="margin-top:1.5rem;">
+            <a href="https://tablo.johnnyanalytics.com" target="_blank" class="btn btn-primary">🌐 Product Page</a>
+            <a href="https://ordering.johnnyanalytics.com" target="_blank" class="btn btn-outline">🚀 Live App</a>
+          </div>
+        </div>
+        <div class="tech-visual">
+          <div class="tech-row"><span class="tech-row-label">Frontend</span><span class="tech-row-value">Next.js + Tailwind</span></div>
+          <div class="tech-row"><span class="tech-row-label">Backend</span><span class="tech-row-value">Supabase + Edge Fn</span></div>
+          <div class="tech-row"><span class="tech-row-label">Payments</span><span class="tech-row-value">Stripe Checkout</span></div>
+          <div class="tech-row"><span class="tech-row-label">Email</span><span class="tech-row-value">ZeptoMail</span></div>
+          <div class="tech-row"><span class="tech-row-label">Push</span><span class="tech-row-value">Web Push + VAPID</span></div>
+          <div class="tech-row"><span class="tech-row-label">Deploy</span><span class="tech-row-value">Vercel</span></div>
+        </div>
+      </div>
+
+      <!-- Analytics Work -->
+      <p class="section-label fade-in" style="margin-top:3rem;">Data Analytics</p>
+
+      <div class="analytics-card fade-in" style="max-width:460px;">
+        <div class="analytics-card-top">
+          <span class="analytics-tag">SQL · Tableau</span>
+          <h4 class="analytics-title">Washington State EV Adoption</h4>
+          <p class="analytics-desc">
+            Analyzed DOL data to surface EV adoption trends across Washington and forecast future demand,
+            with a Tableau dashboard for stakeholder presentation.
+          </p>
+        </div>
+        <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+          <a href="https://github.com/jngooev/Cleanning_WA_EV_Data_with_SQL/blob/main/SQL%20query" target="_blank" class="analytics-link">GitHub ↗</a>
+          <a href="https://public.tableau.com/app/profile/nhatphu.ngo/viz/WAElectricVehicle/Dashboard12" target="_blank" class="analytics-link">Tableau ↗</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <p class="section-label fade-in">Contact</p>
+        <h2 class="section-title fade-in">Let's talk.</h2>
+        <div class="rule fade-in"></div>
+        <p class="body-text fade-in">
+          Whether you're interested in Tablo for your restaurant, have a data project,
+          or just want to connect — I'd love to hear from you.
+        </p>
+        <div class="contact-links fade-in">
+          <a href="mailto:johnnyngo.work@gmail.com" class="btn btn-primary">✉️ Email Me</a>
+          <a href="https://linkedin.com/in/nhatphu-ngo" target="_blank" class="btn btn-outline">LinkedIn</a>
+          <a href="https://github.com/jngooev" target="_blank" class="btn btn-outline">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Johnny Ngo &nbsp;·&nbsp; Deployed on Vercel</p>
+    </div>
+  </footer>
+
+  <script>
+    // Intersection Observer for fade-ins
+    const els = document.querySelectorAll('.fade-in');
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          // Stagger siblings
+          const siblings = [...e.target.parentElement.querySelectorAll('.fade-in')];
+          const idx = siblings.indexOf(e.target);
+          setTimeout(() => e.target.classList.add('visible'), idx * 80);
+          obs.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    els.forEach(el => obs.observe(el));
+  </script>
+
+</body>
+</html>
